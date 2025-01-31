@@ -166,7 +166,7 @@ const Contact = () => {
         </form>
 
         <a
-          href={`https://api.whatsapp.com/send?phone=916385751370&text=Hello, I want to get in touch.`}
+          href={`https://api.whatsapp.com/send?phone=916385751370&text=Hello, I'd like to discuss my project and the services I require from you.`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn mt-4 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-6 rounded-lg transform transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
