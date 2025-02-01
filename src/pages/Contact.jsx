@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import { Fox } from "../models";
 import { Loader } from "../components";
+import { FaWhatsapp } from 'react-icons/fa';  // Import WhatsApp icon from react-icons
 
 const Contact = () => {
   const [currentAnimation, setCurrentAnimation] = useState("idle");
@@ -25,22 +26,35 @@ const Contact = () => {
         <p className="text-lg mb-8">
           From Sales and brainstorming to SaaS, AI, and web development—I'm your all-in-one solution.
         </p>
-        <div className="mt-10"> {/* Added margin-top for spacing */}
+        <div className="mt-10">
           {/* Big Button to Direct to Tally Form */}
           <button
             onClick={() => window.open("https://tally.so/r/mObJOa", "_blank")}
-            className="btn bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-white font-extrabold text-3xl sm:text-4xl py-6 px-10 sm:py-8 sm:px-14 rounded-3xl transform transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-2xl flex items-center justify-center gap-6 hover:ring-4 hover:ring-yellow-400"
+            className="btn bg-gradient-to-r from-orange-400  to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-white font-extrabold text-3xl sm:text-4xl py-6 px-10 sm:py-8 sm:px-14 rounded-3xl transform transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-2xl flex items-center justify-center gap-6 hover:ring-4 hover:ring-yellow-400"
             onFocus={handleFocus}
             onBlur={handleBlur}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            Reach Out to Me
+           Submit Your Project Information
+          </button>
+
+          {/* WhatsApp Button with Icon and Prefilled Message */}
+          <button
+            onClick={() => window.open("https://wa.me/916385751370?text=I%20want%20to%20discuss%20about%20my%20project", "_blank")}
+            className="btn bg-green-500 text-white font-extrabold text-xl sm:text-2xl py-3 px-6 sm:py-4 sm:px-8 rounded-2xl transform transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-2xl flex items-center justify-center gap-3 hover:ring-4 hover:ring-green-400 mt-4"
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <FaWhatsapp size={34} /> {/* WhatsApp Icon */}
+            <span>Connect on WhatsApp</span>
           </button>
         </div>
       </div>
 
-      {/* Dog Model */}
+      {/* Fox Model */}
       <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px] mt-10 lg:mt-0">
         <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}>
           <directionalLight position={[0, 0, 1]} intensity={2.5} />
