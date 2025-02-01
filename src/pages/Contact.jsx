@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import { Fox } from "../models";
 import { Loader } from "../components";
-import { FaWhatsapp } from 'react-icons/fa';  // Import WhatsApp icon from react-icons
+  // Import WhatsApp icon from react-icons
 
 const Contact = () => {
   const [currentAnimation, setCurrentAnimation] = useState("idle");
@@ -48,7 +48,7 @@ const Contact = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <FaWhatsapp size={34} /> {/* WhatsApp Icon */}
+           
             <span>Connect on WhatsApp</span>
           </button>
         </div>
