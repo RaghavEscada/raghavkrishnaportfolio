@@ -1,189 +1,59 @@
-import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
-import { Send, MessageSquare } from 'lucide-react';
-
+import { Suspense, useState } from "react";
 import { Fox } from "../models";
-import useAlert from "../hooks/useAlert";
-import { Alert, Loader } from "../components";
+import { Loader } from "../components";
 
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const { alert, showAlert, hideAlert } = useAlert();
-  const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
 
-  const handleChange = ({ target: { name, value } }) => {
-    setForm({ ...form, [name]: value });
-  };
-
   const handleFocus = () => setCurrentAnimation("walk");
-  const handleBlur = () => setCurrentAnimation("idle");
+  const handleBlur = () => setCurrentAnimation("run");
 
-  const validateForm = () => {
-    return form.name && form.email && form.phone && form.message;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validateForm()) {
-      showAlert({ show: true, text: "Please fill in all fields.", type: "warning" });
-      return;
-    }
-
-    setLoading(true);
-    setCurrentAnimation("hit");
-
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "raghavkrishnaiiitk27@gmail.com",
-          phone: form.phone,
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: "Thank you for your message 😃",
-            type: "success",
-          });
-
-          setTimeout(() => {
-            hideAlert(false);
-            setCurrentAnimation("idle");
-            setForm({ name: "", email: "", phone: "", message: "" });
-          }, 3000);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-          setCurrentAnimation("idle");
-          showAlert({ show: true, text: "I didn't receive your message 😢", type: "danger" });
-        }
-      );
-  };
+  // Handler for hover effect on the button
+  const handleMouseEnter = () => setCurrentAnimation("run");  // Set animation to 'run' on hover
+  const handleMouseLeave = () => setCurrentAnimation("idle"); // Revert to 'idle' on hover out
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
-      {alert.show && <Alert {...alert} />}
-
-      <div className="flex-1 min-w-[50%] flex flex-col">
-      <h1 className="head-text">
-  Hire Me! <br/> Feels Like 5 Freelancers in 1 Engineer.
-</h1>
-
-        <p className="p-1">From Sales and brainstorming to SaaS, AI, and web development—I'm your all-in-one solution</p>
-
-        <form ref={formRef} onSubmit={handleSubmit} className="w-full flex flex-col gap-7 mt-14">
-          <label className="text-black-500 font-semibold">
-            Name
-            <input
-              type="text"
-              name="name"
-              className="input"
-              placeholder="Your Name"
-              required
-              value={form.name}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-            />
-          </label>
-
-          <label className="text-black-500 font-semibold">
-            Email
-            <input
-              type="email"
-              name="email"
-              className="input"
-              placeholder="example@gmail.com"
-              required
-              value={form.email}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-            />
-          </label>
-
-          <label className="text-black-500 font-semibold">
-            Phone Number
-            <input
-              type="tel"
-              name="phone"
-              className="input"
-              placeholder="+91 6385751370"
-              required
-              value={form.phone}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-            />
-          </label>
-
-          <label className="text-black-500 font-semibold">
-            Your Message
-            <textarea
-              name="message"
-              rows="4"
-              className="textarea"
-              placeholder="Write your thoughts here..."
-              value={form.message}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-            />
-          </label>
-
+    <section className="relative flex flex-col lg:flex-row max-container p-6">
+      <div className="flex-1 min-w-[50%] flex flex-col items-start">
+        <h1 className="text-4xl md:text-5xl font-bold text-left text-red-600 leading-tight mb-4">
+          Hire Me! <br />
+          <span className="text-black font-bold">
+            Feels Like 5 Freelancers in 1 Engineer.
+          </span>
+        </h1>
+        <p className="text-lg mb-8">
+          From Sales and brainstorming to SaaS, AI, and web development—I'm your all-in-one solution.
+        </p>
+        <div className="mt-10"> {/* Added margin-top for spacing */}
+          {/* Big Button to Direct to Tally Form */}
           <button
-            type="submit"
-            disabled={loading}
-            className="btn bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 px-6 rounded-lg transform transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
+            onClick={() => window.open("https://tally.so/r/mObJOa", "_blank")}
+            className="btn bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-white font-extrabold text-3xl sm:text-4xl py-6 px-10 sm:py-8 sm:px-14 rounded-3xl transform transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-2xl flex items-center justify-center gap-6 hover:ring-4 hover:ring-yellow-400"
             onFocus={handleFocus}
             onBlur={handleBlur}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            {loading ? (
-              <span className="flex items-center gap-2">
-                <div className="w-5 h-5 border-t-2 border-b-2 border-white rounded-full animate-spin" />
-                Sending...
-              </span>
-            ) : (
-              <span className="flex items-center gap-2">
-                <Send className="w-5 h-5" />
-                Submit
-              </span>
-            )}
+            Reach Out to Me
           </button>
-        </form>
-
-        <a
-          href={`https://api.whatsapp.com/send?phone=916385751370&text=Hello, I'd like to discuss my project and the services I require from you.`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn mt-4 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-6 rounded-lg transform transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
-        >
-          <MessageSquare className="w-5 h-5" />
-          Contact via WhatsApp
-        </a>
+        </div>
       </div>
 
-      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+      {/* Dog Model */}
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px] mt-10 lg:mt-0">
         <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}>
           <directionalLight position={[0, 0, 1]} intensity={2.5} />
           <ambientLight intensity={1} />
           <pointLight position={[5, 10, 0]} intensity={2} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} />
           <Suspense fallback={<Loader />}>
-            <Fox currentAnimation={currentAnimation} position={[0.5, 0.35, 0]} rotation={[12.629, -0.6, 0]} scale={[0.5, 0.5, 0.5]} />
+            <Fox
+              currentAnimation={currentAnimation}
+              position={[0.5, 0.35, 0]}
+              rotation={[12.629, -0.6, 0]}
+              scale={[0.5, 0.5, 0.5]}
+            />
           </Suspense>
         </Canvas>
       </div>
