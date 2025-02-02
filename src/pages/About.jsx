@@ -23,7 +23,7 @@ const About = () => {
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
           Freelancer & Software Engineering Student based in India, specializing in technical
-          education through hands-on learning and building applications. I'm a Bachelor of Technology student at the Indian Institute of Information Technology Kottayam, an institute of national importance under the Government of India
+          education through hands-on learning and building applications. I'm a Bachelor of Technology student at the Indian Institute of Information Technology Kottayam, an institute of national importance under the Government of India.
         </p>
       </div>
 
