@@ -231,6 +231,16 @@ export const projects = [
         image: logo1 // Use the imported logo1 image
     },
     {
+        iconUrl: logo1, // Use logo1 which is directly imported from kaleido.png
+        theme: 'btn-back-red',
+        name: 'Baked Media',
+        description: 'Developed a web application for a creative studio in collaboration with Genvio Productions based out of Bangalore.',
+        link: 'https://www.bakedmedia.in/',
+        techStack: ['React', 'Tailwind CSS', 'Next.js','GSAP'],
+        image: logo1 // Use the imported logo1 image
+    },
+    
+    {
         iconUrl: estate,
         theme: 'btn-back-black',
         name: 'Uzexly',
