@@ -10,7 +10,7 @@ const HomeInfo = ({ currentStage }) => {
         <span className='font-semibold mx-2 text-white'>Raghav Krishna</span>
         👋
         <br />
-        Software Engineer | Freelancer | Gen AI, Web, SaaS, Sales | 🇮🇳
+        Computer Science Student | IIIT Kottayam | Freelancer | Gen AI, Web, SaaS, Sales | IIIT Kottayam | 🇮🇳
       </h1>
     );
 
