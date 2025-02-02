@@ -7,6 +7,7 @@ import logo5 from "../assets/images/nuke.png"
 import logo6 from "../assets/images/k.png"
 import logo7 from "../assets/images/u.png"
 import logo8 from "../assets/images/doc.png"
+import logo9 from "../assets/images/bm.png"
 
 
 
@@ -237,7 +238,7 @@ export const projects = [
         description: 'Developed a web application for a creative studio in collaboration with Genvio Productions based out of Bangalore.',
         link: 'https://www.bakedmedia.in/',
         techStack: ['React', 'Tailwind CSS', 'Next.js','GSAP'],
-        image: logo1 // Use the imported logo1 image
+        image: logo9 // Use the imported logo1 image
     },
     
     {
