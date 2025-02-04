@@ -290,7 +290,7 @@ export const projects = [
     {
         iconUrl: car,
         theme: 'btn-back-blue',
-        name: 'Crochet Flex',
+        name: 'Crochet Flex - Website Under Maintenance',
         description: 'Designed and built a 3d product page for my sibling owned crochet buisness.',
         link: 'https://diodisha.nic.in/images/page_under_construction.gif',
         techStack: ['html','css','frames','javascript'],
@@ -301,7 +301,7 @@ export const projects = [
     {
         iconUrl: estate,
         theme: 'btn-back-black',
-        name: 'Japanese Hitman',
+        name: 'Japanese Hitman - Website Under Maintenance',
         description: 'Developed a illusion-3D website using video frames.',
         link: '',
         techStack: ['html','css','frames','javascript'],
