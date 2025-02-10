@@ -274,7 +274,7 @@ export const projects = [
         theme: 'btn-back-pink',
         name: 'Nuke Marketing',
         description: 'Crafting a website for a Instagram Celebrity run agency based out of Chennai. ',
-        link: 'https://nuke-marketing.vercel.app/',
+        link: 'https://nukemarketing.vercel.app/',
         techStack: ['html','css','frames','javascript'],
         image: logo5
     },
