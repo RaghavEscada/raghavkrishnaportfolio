@@ -287,23 +287,23 @@ export const projects = [
         techStack: ['GROQ API','SQLite3','Python','Streamlit','Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
         image: logo3
     },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Crochet Flex - Website Under Maintenance',
-        description: 'Designed and built a 3d product page for my sibling owned crochet buisness.',
-        link: 'https://diodisha.nic.in/images/page_under_construction.gif',
-        techStack: ['html','css','frames','javascript'],
-        image: logo4
-    },
+    // {
+    //     iconUrl: car,
+    //     theme: 'btn-back-blue',
+    //     name: 'Crochet Flex - Website Under Maintenance',
+    //     description: 'Designed and built a 3d product page for my sibling owned crochet buisness.',
+    //     link: 'https://diodisha.nic.in/images/page_under_construction.gif',
+    //     techStack: ['html','css','frames','javascript'],
+    //     image: logo4
+    // },
     
     
     {
         iconUrl: estate,
         theme: 'btn-back-black',
-        name: 'Japanese Hitman - Website Under Maintenance',
+        name: 'Japanese Hitman',
         description: 'Developed a illusion-3D website using video frames.',
-        link: '',
+        link: 'https://japanese-hitman.vercel.app/',
         techStack: ['html','css','frames','javascript'],
         image: logo6
     },
