@@ -246,7 +246,7 @@ export const projects = [
         theme: 'btn-back-black',
         name: 'Uzexly',
         description: 'Developed a website for a Delhi based agency.',
-        link: '',
+        link: 'https://www.uzexly.com/',
         techStack: ['Next.js','Tailwind CSS','React'],
         image: logo7
     },
